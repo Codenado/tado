@@ -16,7 +16,8 @@ class TasksController extends Controller
      */
     public function index()
     {
-        //
+        return view('tasks.index', compact('project'));
+
     }
 
     /**
@@ -24,9 +25,9 @@ class TasksController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(Project $project)
     {
-        //
+        return view('tasks.create', compact('project'));   //
     }
 
     /**
@@ -34,7 +35,7 @@ class TasksController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(Project $project)
     {
         //
     }
@@ -45,9 +46,9 @@ class TasksController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show(Project $project, Task $task)
     {
-        //
+        return view('tasks.show', compact('project', 'task'));
     }
 
     /**
@@ -56,9 +57,9 @@ class TasksController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit(Project $project, Task $task)
     {
-        //
+        return view('tasks.edit', compact('project', 'task'));
     }
 
     /**
@@ -67,9 +68,9 @@ class TasksController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(Project $project, Task $task)
     {
-        //
+        return view('tasks.update', compact('task'));
     }
 
     /**
@@ -78,7 +79,7 @@ class TasksController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Project $project, Task $task)
     {
         //
     }

@@ -16,7 +16,8 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        //
+       $projects = Project::all();
+        return view('projects.index', compact('projects'));
     }
 
     /**
@@ -26,7 +27,8 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        //
+        return view('projects.create');
+
     }
 
     /**
@@ -45,9 +47,9 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show(Project $project)
     {
-        //
+        return view('projects.show', compact('project'));
     }
 
     /**
@@ -56,9 +58,9 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(Project $project)
+    {    
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -67,9 +69,10 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(Project $project)
     {
-        //
+         return view('projects.update', compact('project'));
+
     }
 
     /**
@@ -78,7 +81,7 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Project $project)
     {
         //
     }
